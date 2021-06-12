@@ -117,7 +117,9 @@
                     <li class="nav-item dropdown header-profile">
                         <a class="nav-link" href="#" role="button" data-toggle="dropdown">
                             <div class="header-info">
-                                <span>Hello, <strong>Samuel</strong></span>
+                                <span>Hai, <strong><?php echo $this->session->userdata('nama') ?></strong></span>
+
+
                             </div>
                             <img src="<?= base_url() ?>assets/admin/images/profile/pic1.jpg" width="20" alt="" />
                         </a>

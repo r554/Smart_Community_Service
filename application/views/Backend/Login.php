@@ -21,6 +21,12 @@
                         <div class="row no-gutters">
                             <div class="col-xl-12">
                                 <div class="auth-form">
+                                    <?php
+                                    // Cek apakah terdapat session nama message
+                                    if ($this->session->flashdata('message')) { // Jika ada
+                                        echo '<div class="alert alert-danger">' . $this->session->flashdata('message') . '</div>'; // Tampilkan pesannya
+                                    }
+                                    ?>
                                     <center>
                                         <img src="<?= base_url() ?>assets/admin/images/logo-pemkab-jember.png" alt="" width="100px" height="100px">
                                     </center>
@@ -30,11 +36,11 @@
                                     <form action="<?= base_url('Login/login') ?>" method="POST">
                                         <div class="form-group">
                                             <label class="mb-1"><strong>Username</strong></label>
-                                            <input name="username" type="text" class="form-control">
+                                            <input name="username" type="text" class="form-control" required>
                                         </div>
                                         <div class="form-group">
                                             <label class="mb-1"><strong>Password</strong></label>
-                                            <input name="password" type="password" class="form-control">
+                                            <input name="password" type="password" class="form-control" required>
                                         </div>
                                         <div class="form-row d-flex justify-content-between mt-4 mb-2">
                                             <div class="form-group">
