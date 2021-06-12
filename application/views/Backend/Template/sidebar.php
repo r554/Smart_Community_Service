@@ -1,7 +1,7 @@
 <div class="deznav">
     <div class="deznav-scroll">
         <ul class="metismenu" id="menu">
-            <li><a class="ai-icon" href="javascript:void()" aria-expanded="false">
+            <li><a class="ai-icon" href="<?php echo site_url('Backend/Dashboard'); ?>" aria-expanded="false">
                     <i class="flaticon-381-networking"></i>
                     <span class="nav-text">Dashboard</span>
                 </a>
@@ -9,6 +9,16 @@
             <li><a href="widget-basic.html" class="ai-icon" aria-expanded="false">
                     <i class="flaticon-381-notepad"></i>
                     <span class="nav-text">Widget</span>
+                </a>
+            </li>
+            <li><a href="<?php echo site_url('Backend/Kelola_Dinas'); ?>" class="ai-icon" aria-expanded="false">
+                    <i class="flaticon-381-notepad"></i>
+                    <span class="nav-text">Kelola Dinas</span>
+                </a>
+            </li>
+            <li><a href="widget-basic.html" class="ai-icon" aria-expanded="false">
+                    <i class="flaticon-381-notepad"></i>
+                    <span class="nav-text">Kelola User</span>
                 </a>
             </li>
             <li><a class="has-arrow ai-icon" href="javascript:void()" aria-expanded="false">
