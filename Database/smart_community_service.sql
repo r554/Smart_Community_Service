@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 12, 2021 at 09:27 AM
+-- Generation Time: Jun 12, 2021 at 10:24 PM
 -- Server version: 10.4.13-MariaDB
 -- PHP Version: 7.3.20
 
@@ -33,6 +33,13 @@ CREATE TABLE `tbl_dinas` (
   `alamat_dinas` varchar(200) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+--
+-- Dumping data for table `tbl_dinas`
+--
+
+INSERT INTO `tbl_dinas` (`id_dinas`, `nama_dinas`, `alamat_dinas`) VALUES
+(1, 'Dinas Perhubungan', 'Jl Gatot Subroto Jember');
+
 -- --------------------------------------------------------
 
 --
@@ -47,8 +54,16 @@ CREATE TABLE `tbl_lapor` (
   `id_dinas` int(11) NOT NULL,
   `longitude` varchar(50) NOT NULL,
   `latitude` varchar(50) NOT NULL,
-  `status` varchar(5) NOT NULL
+  `status` varchar(5) NOT NULL,
+  `lokasi_tkp` varchar(200) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `tbl_lapor`
+--
+
+INSERT INTO `tbl_lapor` (`id_lapor`, `tanggal_pengaduan`, `keterangan_pengaduan`, `id_user`, `id_dinas`, `longitude`, `latitude`, `status`, `lokasi_tkp`) VALUES
+('232323', '2021-06-12 19:46:34', 'Jalan Berlubang Cukup Parah', '515', 1, '928838323', '984098034', '4', 'Jl Malhera 234 Jember');
 
 -- --------------------------------------------------------
 
@@ -93,6 +108,13 @@ CREATE TABLE `tbl_user` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
+-- Dumping data for table `tbl_user`
+--
+
+INSERT INTO `tbl_user` (`id_user`, `nama_user`, `alamat_user`, `no_user`, `email_user`, `username_user`, `password_user`, `status`) VALUES
+('515', 'Agus Priyat', 'Jl Bungur Gebang Jember', '083333993245', 'agus@gmail.com', 'agus', '123456', '1');
+
+--
 -- Indexes for dumped tables
 --
 
@@ -103,10 +125,24 @@ ALTER TABLE `tbl_dinas`
   ADD PRIMARY KEY (`id_dinas`);
 
 --
+-- Indexes for table `tbl_lapor`
+--
+ALTER TABLE `tbl_lapor`
+  ADD PRIMARY KEY (`id_lapor`),
+  ADD KEY `id_user` (`id_user`),
+  ADD KEY `id_dinas` (`id_dinas`);
+
+--
 -- Indexes for table `tbl_petugas`
 --
 ALTER TABLE `tbl_petugas`
   ADD PRIMARY KEY (`id_petugas`);
+
+--
+-- Indexes for table `tbl_user`
+--
+ALTER TABLE `tbl_user`
+  ADD PRIMARY KEY (`id_user`);
 
 --
 -- AUTO_INCREMENT for dumped tables
@@ -116,13 +152,24 @@ ALTER TABLE `tbl_petugas`
 -- AUTO_INCREMENT for table `tbl_dinas`
 --
 ALTER TABLE `tbl_dinas`
-  MODIFY `id_dinas` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_dinas` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `tbl_petugas`
 --
 ALTER TABLE `tbl_petugas`
   MODIFY `id_petugas` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
+-- Constraints for dumped tables
+--
+
+--
+-- Constraints for table `tbl_lapor`
+--
+ALTER TABLE `tbl_lapor`
+  ADD CONSTRAINT `tbl_lapor_ibfk_1` FOREIGN KEY (`id_user`) REFERENCES `tbl_user` (`id_user`),
+  ADD CONSTRAINT `tbl_lapor_ibfk_2` FOREIGN KEY (`id_dinas`) REFERENCES `tbl_dinas` (`id_dinas`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

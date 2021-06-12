@@ -6,47 +6,30 @@
                     <span class="nav-text">Dashboard</span>
                 </a>
             </li>
-            <li><a href="widget-basic.html" class="ai-icon" aria-expanded="false">
-                    <i class="flaticon-381-notepad"></i>
-                    <span class="nav-text">Widget</span>
+            <li><a class="has-arrow ai-icon" href="javascript:void()" aria-expanded="false">
+                    <i class="flaticon-381-television"></i>
+                    <span class="nav-text">Pengaduan</span>
                 </a>
+                <ul aria-expanded="false">
+                    <li><a href="<?= base_url('Backend/Pengaduan') ?>">Pengaduan Masuk</a></li>
+                    <li><a href="<?= base_url('Backend/Pengaduan/tampil_pengaduan_diproses') ?>">Pengaduan Diproses</a></li>
+                    <li><a href="<?= base_url('Backend/Pengaduan/tampil_pengaduan_dibatalkan') ?>">Pengaduan Dibatalkan</a></li>
+                    <li><a href="<?= base_url('Backend/Pengaduan/tampil_pengaduan_selesai') ?>">Pengaduan Selesai</a></li>
+                </ul>
+            </li>
+            <li><a class="has-arrow ai-icon" href="javascript:void()" aria-expanded="false">
+                    <i class="flaticon-381-network"></i>
+                    <span class="nav-text">Data Master</span>
+                </a>
+                <ul aria-expanded="false">
+                    <li><a href="./app-profile.html">Data Dinas</a></li>
+                    <li><a href="./app-calender.html">Data User</a></li>
+                </ul>
             </li>
             <li><a href="<?php echo site_url('Backend/Kelola_Dinas'); ?>" class="ai-icon" aria-expanded="false">
                     <i class="flaticon-381-notepad"></i>
-                    <span class="nav-text">Kelola Dinas</span>
+                    <span class="nav-text">Laporan</span>
                 </a>
-            </li>
-            <li><a href="widget-basic.html" class="ai-icon" aria-expanded="false">
-                    <i class="flaticon-381-notepad"></i>
-                    <span class="nav-text">Kelola User</span>
-                </a>
-            </li>
-            <li><a class="has-arrow ai-icon" href="javascript:void()" aria-expanded="false">
-                    <i class="flaticon-381-television"></i>
-                    <span class="nav-text">Apps</span>
-                </a>
-                <ul aria-expanded="false">
-                    <li><a href="./app-profile.html">Profile</a></li>
-                    <li><a class="has-arrow" href="javascript:void()" aria-expanded="false">Email</a>
-                        <ul aria-expanded="false">
-                            <li><a href="./email-compose.html">Compose</a></li>
-                            <li><a href="./email-inbox.html">Inbox</a></li>
-                            <li><a href="./email-read.html">Read</a></li>
-                        </ul>
-                    </li>
-                    <li><a href="./app-calender.html">Calendar</a></li>
-                    <li><a class="has-arrow" href="javascript:void()" aria-expanded="false">Shop</a>
-                        <ul aria-expanded="false">
-                            <li><a href="./ecom-product-grid.html">Product Grid</a></li>
-                            <li><a href="./ecom-product-list.html">Product List</a></li>
-                            <li><a href="./ecom-product-detail.html">Product Details</a></li>
-                            <li><a href="./ecom-product-order.html">Order</a></li>
-                            <li><a href="./ecom-checkout.html">Checkout</a></li>
-                            <li><a href="./ecom-invoice.html">Invoice</a></li>
-                            <li><a href="./ecom-customers.html">Customers</a></li>
-                        </ul>
-                    </li>
-                </ul>
             </li>
 
         </ul>

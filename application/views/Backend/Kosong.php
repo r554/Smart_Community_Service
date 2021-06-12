@@ -1,3 +1,9 @@
+<?php
+if (!$this->session->userdata('nama')) {
+    redirect(base_url("Login"));
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 

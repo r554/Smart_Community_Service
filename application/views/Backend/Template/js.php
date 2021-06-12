@@ -17,3 +17,6 @@
 
 <!-- Dashboard 1 -->
 <script src="<?= base_url() ?>assets/admin/js/dashboard/dashboard-1.js"></script>
+
+<!-- Datatable -->
+<script src="<?= base_url() ?>assets/admin/vendor/datatables/js/jquery.dataTables.min.js"></script>
