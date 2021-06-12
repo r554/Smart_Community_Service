@@ -26,6 +26,6 @@ class Welcome extends CI_Controller
 
 	public function k()
 	{
-		$this->load->view('Backend/Kosong');
+		$this->load->view('Backend/Login');
 	}
 }
