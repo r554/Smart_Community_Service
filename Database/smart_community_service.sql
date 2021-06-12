@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 12, 2021 at 07:21 AM
+-- Generation Time: Jun 12, 2021 at 09:27 AM
 -- Server version: 10.4.13-MariaDB
 -- PHP Version: 7.3.20
 
@@ -63,9 +63,17 @@ CREATE TABLE `tbl_petugas` (
   `no_petugas` varchar(16) NOT NULL,
   `email_petugas` varchar(50) NOT NULL,
   `username_petugas` varchar(30) NOT NULL,
-  `password_petugas` varchar(30) NOT NULL,
+  `password_petugas` varchar(50) NOT NULL,
+  `foto_petugas` varchar(50) NOT NULL,
   `level` varchar(2) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `tbl_petugas`
+--
+
+INSERT INTO `tbl_petugas` (`id_petugas`, `nama_petugas`, `alamat_petugas`, `no_petugas`, `email_petugas`, `username_petugas`, `password_petugas`, `foto_petugas`, `level`) VALUES
+(1, 'Erwin Andrianto', 'Banyuwangi, Alas Purwo', '081333992731', 'erwin@gmail.com', 'erwin', 'e10adc3949ba59abbe56e057f20f883e', 'default.jpg', '1');
 
 -- --------------------------------------------------------
 
@@ -114,7 +122,7 @@ ALTER TABLE `tbl_dinas`
 -- AUTO_INCREMENT for table `tbl_petugas`
 --
 ALTER TABLE `tbl_petugas`
-  MODIFY `id_petugas` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_petugas` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
