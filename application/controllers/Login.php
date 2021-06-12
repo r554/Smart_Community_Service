@@ -42,6 +42,8 @@ class Login extends CI_Controller
                     'foto_petugas' => $user->foto_petugas, // Buat session role
                 );
 
+
+                $this->session->set_userdata($session);
                 redirect(site_url('Backend/Dashboard'));
 
                 // $this->session->set_userdata($session); // Buat session sesuai $session
